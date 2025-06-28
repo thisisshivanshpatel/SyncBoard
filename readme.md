@@ -18,7 +18,7 @@ SyncBoard is a powerful clipboard management extension that seamlessly syncs you
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/chrome-timer-extension.git
+    git clone git@github.com:thisisshivanshpatel/SyncBoard.git
     ```
 2. Open Chrome and navigate to `chrome://extensions/`.
 3. Enable "Developer mode" by toggling the switch in the top right corner.
