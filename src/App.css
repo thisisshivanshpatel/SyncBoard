@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body,
+html {
+  height: 500px;
+  width: 300px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+
+@font-face {
+  font-family: 'Pacifico';
+  src: url('../fonts/Pacifico-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'SignikaNegative';
+  src: url('../fonts/SignikaNegative-VariableFont_wght.ttf');
+}
+
+@layer components {
+  .button {
+    @apply text-white bg-[#8B5DFF] rounded-2xl font-['SignikaNegative'] 
+    text-sm px-5 py-2.5 mb-2 font-medium border-none 
+    hover:opacity-80;
+  }
+}
+
+.theme {
+  color: #8B5DFF;
+}
+
+body {
+  font-family: "SignikaNegative", sans-serif;
+  font-weight:bold;
+  font-style: normal;
+  font-size: 15px;
+
+  box-sizing: border-box;
+  background-color: #8B5DFF;
+}
