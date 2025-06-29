@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "SyncBoard clipboard manager",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This extension will sync your copied items into multiple devices via your chrome account",
   "icons": {
     "128": "icons/Sync128.png"
