@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./output.css";
 import { Card, CardBody, Textarea, Tooltip } from "@heroui/react";
+import { Delete } from "@mui/icons-material";
 
 enum SynCBoardActions {
   SAVE = "save",
@@ -112,6 +113,22 @@ const MyComponent = () => {
                     >
                       {item.copiedValue}
                     </p>
+                    <div className="flex justify-end">
+                      <Delete
+                        onClick={() => {
+                          sendMessage(SynCBoardActions.DELETE, item);
+                        }}
+                        fontSize="small"
+                        sx={{
+                          color: "gray",
+                          cursor: "pointer",
+                          transition: "color 0.2s",
+                          "&:hover": {
+                            color: "red",
+                          },
+                        }}
+                      />
+                    </div>
                   </CardBody>
                 </Card>
               </Tooltip>
