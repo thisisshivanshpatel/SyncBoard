@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "description": "This extension will sync your copied items into multiple devices via your chrome account",
   "icons": {
-    "128": "icons/bookmark-fav-front-gradient.png"
+    "128": "icons/Sync128.png"
   },
   "action": {
     "default_popup": "index.html"
