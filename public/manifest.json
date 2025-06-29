@@ -6,7 +6,6 @@
   "icons": {
     "128": "icons/bookmark-fav-front-gradient.png"
   },
-  "key": "efeopgkphheffnhhgmbkkpbgeimdichi",
   "action": {
     "default_popup": "index.html"
   },
