@@ -34,16 +34,14 @@ const MyComponent = () => {
   /** method used for adding `entered` value to board and `syncing` it */
   const handleEnteredValue = (copiedText: string) => {
     const value = copiedText.trim();
+    const timeStamp = Date.now();
 
     if (!(value && value.trim().length === 0)) {
-      setClipBoard((prev) => [
-        ...prev,
-        { copiedValue: value, timeStamp: Date.now() },
-      ]);
+      setClipBoard((prev) => [...prev, { copiedValue: value, timeStamp }]);
       setCopyText("");
       sendMessage(SynCBoardActions.SAVE, {
         copiedValue: value,
-        timeStamp: Date.now(),
+        timeStamp,
       });
     }
   };
