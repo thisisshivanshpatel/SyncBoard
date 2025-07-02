@@ -86,6 +86,7 @@ const MyComponent = () => {
               handleEnteredValue(copyText);
             }
           }}
+          aria-label="Text Area for pasting value"
           isRequired
           className="sticky top-0 left-0 z-20 max-w-xs"
           label=""
@@ -94,11 +95,15 @@ const MyComponent = () => {
         />
 
         {clipBoard?.length > 0 &&
-          clipBoard?.map((item, ind) => {
+          clipBoard?.map((item) => {
             return (
-              <Tooltip key={ind} content="Click to copy" placement="top">
+              <Tooltip
+                key={item.timeStamp}
+                content="Click to copy"
+                placement="top"
+              >
                 <Card
-                  key={ind}
+                  key={item.timeStamp}
                   className="cursor-pointer"
                   style={{ maxHeight: "200px" }}
                 >
