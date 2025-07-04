@@ -12,7 +12,7 @@ SyncBoard is a powerful clipboard management extension that seamlessly syncs you
 - Secure cloud-based storage with end-to-end encryption
 - Intuitive and clean user interface
 - Support for text
-- Optional sign-in for syncing and backup
+- No SignIn required
 
 ## Installation
 
@@ -37,9 +37,8 @@ SyncBoard is a powerful clipboard management extension that seamlessly syncs you
 Contributions are welcome! Please open an issue or submit a pull request.
 
 ## Next Feature targets
-
-1. Delete
-2. favorite clipboard entries easily
+1. ~~Delete~~  
+2. Favorite clipboard entries easily
 
 ## License
 
