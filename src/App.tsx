@@ -37,7 +37,6 @@ const MyComponent = () => {
     const timeStamp = Date.now();
 
     if (!(value && value.trim().length === 0)) {
-      setClipBoard((prev) => [...prev, { copiedValue: value, timeStamp }]);
       setCopyText("");
       sendMessage(SynCBoardActions.SAVE, {
         copiedValue: value,
@@ -95,48 +94,50 @@ const MyComponent = () => {
         />
 
         {clipBoard?.length > 0 &&
-          clipBoard?.map((item) => {
-            return (
-              <Tooltip
-                key={item.timeStamp}
-                content="Click to copy"
-                placement="top"
-              >
-                <Card
+          clipBoard
+            ?.sort((a, b) => b.timeStamp - a.timeStamp)
+            ?.map((item) => {
+              return (
+                <Tooltip
                   key={item.timeStamp}
-                  className="cursor-pointer"
-                  style={{ maxHeight: "200px" }}
+                  content="Click to copy"
+                  placement="top"
                 >
-                  <CardBody>
-                    <p
-                      className="overflow-hidden"
-                      onClick={() =>
-                        navigator.clipboard.writeText(item.copiedValue)
-                      }
-                    >
-                      {item.copiedValue}
-                    </p>
-                    <div className="flex justify-end">
-                      <Delete
-                        onClick={() => {
-                          sendMessage(SynCBoardActions.DELETE, item);
-                        }}
-                        fontSize="small"
-                        sx={{
-                          color: "gray",
-                          cursor: "pointer",
-                          transition: "color 0.2s",
-                          "&:hover": {
-                            color: "red",
-                          },
-                        }}
-                      />
-                    </div>
-                  </CardBody>
-                </Card>
-              </Tooltip>
-            );
-          })}
+                  <Card
+                    key={item.timeStamp}
+                    className="cursor-pointer"
+                    style={{ maxHeight: "200px" }}
+                  >
+                    <CardBody>
+                      <p
+                        className="overflow-hidden"
+                        onClick={() =>
+                          navigator.clipboard.writeText(item.copiedValue)
+                        }
+                      >
+                        {item.copiedValue}
+                      </p>
+                      <div className="flex justify-end">
+                        <Delete
+                          onClick={() => {
+                            sendMessage(SynCBoardActions.DELETE, item);
+                          }}
+                          fontSize="small"
+                          sx={{
+                            color: "gray",
+                            cursor: "pointer",
+                            transition: "color 0.2s",
+                            "&:hover": {
+                              color: "red",
+                            },
+                          }}
+                        />
+                      </div>
+                    </CardBody>
+                  </Card>
+                </Tooltip>
+              );
+            })}
       </div>
     </>
   );

@@ -4256,28 +4256,37 @@ html {
 }
 
 @font-face {
-  font-family: 'Pacifico';
+  font-family: "Pacifico";
 
-  src: url('../fonts/Pacifico-Regular.ttf');
+  src: url("../fonts/Pacifico-Regular.ttf");
 }
 
 @font-face {
-  font-family: 'SignikaNegative';
+  font-family: "SignikaNegative";
 
-  src: url('../fonts/SignikaNegative-VariableFont_wght.ttf');
+  src: url("../fonts/SignikaNegative-VariableFont_wght.ttf");
 }
 
 .theme {
-  color: #8B5DFF;
+  color: #8b5dff;
 }
 
 body {
   font-family: "SignikaNegative", sans-serif;
-  font-weight:bold;
+  font-weight: bold;
   font-style: normal;
   font-size: 15px;
   box-sizing: border-box;
-  background-color: #8B5DFF;
+  /* background-color: #8B5DFF; */
+  background: #4776e6;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #8e54e9,
+    #4776e6
+  );
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .file\:cursor-pointer::file-selector-button {
